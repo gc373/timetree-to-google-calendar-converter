@@ -53,7 +53,7 @@ const TimeTreeLinkInput: React.FC = () => {
     let range = 30 * 24 * 60 * 60 * 1000; // デフォルト1ヶ月
     if (period === "3month") range = 90 * 24 * 60 * 60 * 1000;
     if (period === "1year") range = 365 * 24 * 60 * 60 * 1000;
-    const from = now - range;
+    const from = now;
     const to = now + range;
     const utc_offset = 32400;
 
