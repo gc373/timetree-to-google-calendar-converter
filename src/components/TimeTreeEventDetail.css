@@ -1,0 +1,53 @@
+.event-detail {
+  background: #fffefe;
+  color: #222;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin: 8px auto 16px auto;
+  padding: 1em;
+  max-width: 700px;
+  width: 100%;
+  box-sizing: border-box;
+}
+.event-note {
+  white-space: pre-wrap;
+  text-align: left;
+}
+.event-location {
+  margin-top: 0.5em;
+  font-size: 0.95em;
+  text-align: left;
+}
+.event-location a {
+  color: #0070f3;
+  text-decoration: none;
+}
+.event-location a:hover {
+  text-decoration: underline;
+}
+.calendar-add-btn {
+  display: inline-block;
+  margin-top: 0.5em;
+  padding: 0.5em 1.2em;
+  border-radius: 8px;
+  border: 1px solid #1976d2;
+  background: #1976d2;
+  color: #fff;
+  font-weight: 500;
+  font-size: 1em;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+}
+.calendar-add-btn:hover {
+  background: #1251a3;
+  border-color: #1251a3;
+  color: #fff;
+}
+@media (max-width: 600px) {
+  .event-detail {
+    max-width: 98vw;
+    padding: 0.7rem 0.3rem;
+    font-size: 0.98em;
+  }
+}
