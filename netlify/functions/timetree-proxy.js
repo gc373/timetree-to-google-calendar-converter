@@ -1,20 +1,23 @@
-import fetch from 'node-fetch';
+const fetch = require('node-fetch');
 
-const handler = async (event) => {
+exports.handler = async (event) => {
   const { path } = event.queryStringParameters;
-  const timetreeApiUrl = `https://timetreeapp.com/${path}`;
+  const timetreeApiUrl = `https://timetreeapp.com${path}`;
 
   try {
     const response = await fetch(timetreeApiUrl, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
-        'x-timetreea': 'web/2.1.0/ja',
+        'x-timetreea': 'web/2.1.0/ja'
       },
     });
 
     if (!response.ok) {
-      return { statusCode: response.status, body: `Error from TimeTree: ${response.statusText}` };
+      return {
+        statusCode: response.status,
+        body: `Error from TimeTree: ${response.statusText}`,
+      };
     }
 
     const data = await response.json();
@@ -28,5 +31,3 @@ const handler = async (event) => {
     return { statusCode: 500, body: 'Serverless function error' };
   }
 };
-
-export { handler };
