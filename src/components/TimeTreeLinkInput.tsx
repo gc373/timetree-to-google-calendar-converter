@@ -57,10 +57,11 @@ const TimeTreeLinkInput: React.FC = () => {
     const to = now + range;
     const utc_offset = 32400;
 
-    const url = `/timetree-proxy/api/v2/public_calendars/${calendarId}/public_events?from=${from}&to=${to}&utc_offset=${utc_offset}`;
+    const apiPath = `/api/v2/public_calendars/${calendarId}/public_events?from=${from}&to=${to}&utc_offset=${utc_offset}`;
 
-    try {
-      const res = await fetch(url, {
+      // Netlify Functionsを呼び出す
+      try {
+      const res = await fetch(`/.netlify/functions/timetree-proxy?path=${apiPath}`, {
         headers: {
           "x-timetreea": "web/2.1.0/ja",
         },
